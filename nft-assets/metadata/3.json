@@ -1,0 +1,38 @@
+{
+  "name": "Genesis #3",
+  "description": "A unique generative artwork featuring Prismatic geometry with Rings pattern on Arctic Teal backdrop. Part of the Genesis Collection.",
+  "image": "ipfs://QmWpWCGwDBvwaSHKGrbAppTHZAAmpjfd3wKcqi5fTGztAm",
+  "attributes": [
+    {
+      "trait_type": "Shape",
+      "value": "Prismatic"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Arctic Teal"
+    },
+    {
+      "trait_type": "Pattern",
+      "value": "Rings"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Shimmer"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 3,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 1,
+      "display_type": "number"
+    }
+  ],
+  "external_url": "https://your-website.com"
+}

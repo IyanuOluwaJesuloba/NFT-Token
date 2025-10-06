@@ -1,0 +1,57 @@
+<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg0" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0c29;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#302b63;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#24243e;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <radialGradient id="centerGlow0">
+      <stop offset="0%" style="stop-color:#00f2fe;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background Gradient -->
+  <rect width="500" height="500" fill="url(#bg0)"/>
+  
+  <!-- Pattern Overlay -->
+  <circle cx="10" cy="10" r="1" fill="white" opacity="0.2"/><circle cx="57" cy="81" r="2" fill="white" opacity="0.27"/><circle cx="104" cy="152" r="3" fill="white" opacity="0.34"/><circle cx="151" cy="223" r="1" fill="white" opacity="0.41"/><circle cx="198" cy="294" r="2" fill="white" opacity="0.48"/><circle cx="245" cy="365" r="3" fill="white" opacity="0.25"/><circle cx="292" cy="436" r="1" fill="white" opacity="0.32"/><circle cx="339" cy="27" r="2" fill="white" opacity="0.39"/><circle cx="386" cy="98" r="3" fill="white" opacity="0.46"/><circle cx="433" cy="169" r="1" fill="white" opacity="0.23"/><circle cx="480" cy="240" r="2" fill="white" opacity="0.3"/><circle cx="47" cy="311" r="3" fill="white" opacity="0.37"/><circle cx="94" cy="382" r="1" fill="white" opacity="0.44"/><circle cx="141" cy="453" r="2" fill="white" opacity="0.21"/><circle cx="188" cy="44" r="3" fill="white" opacity="0.28"/><circle cx="235" cy="115" r="1" fill="white" opacity="0.35"/><circle cx="282" cy="186" r="2" fill="white" opacity="0.42"/><circle cx="329" cy="257" r="3" fill="white" opacity="0.49"/><circle cx="376" cy="328" r="1" fill="white" opacity="0.26"/><circle cx="423" cy="399" r="2" fill="white" opacity="0.33"/><circle cx="470" cy="470" r="3" fill="white" opacity="0.4"/><circle cx="37" cy="61" r="1" fill="white" opacity="0.47"/><circle cx="84" cy="132" r="2" fill="white" opacity="0.24"/><circle cx="131" cy="203" r="3" fill="white" opacity="0.31"/><circle cx="178" cy="274" r="1" fill="white" opacity="0.38"/><circle cx="225" cy="345" r="2" fill="white" opacity="0.45"/><circle cx="272" cy="416" r="3" fill="white" opacity="0.22"/><circle cx="319" cy="487" r="1" fill="white" opacity="0.29"/><circle cx="366" cy="78" r="2" fill="white" opacity="0.36"/><circle cx="413" cy="149" r="3" fill="white" opacity="0.43"/>
+  
+  <!-- Center Glow Effect -->
+  <circle cx="250" cy="250" r="150" fill="url(#centerGlow0)"/>
+  
+  <!-- Outer Ring -->
+  <circle cx="250" cy="250" r="120" fill="none" stroke="white" stroke-width="2" opacity="0.15"/>
+  
+  <!-- Main Shape -->
+  <polygon points="330,250 290,319.28203230275506 210,319.2820323027551 170,250 209.99999999999997,180.71796769724492 289.99999999999994,180.7179676972449" fill="white" opacity="0.9" filter="url(#glow)"/>
+  
+  <!-- Inner Accent -->
+  <circle cx="250" cy="250" r="50" fill="#00f2fe" opacity="0.2" filter="url(#softGlow)"/>
+  
+  <!-- Minimal Badge -->
+  <g opacity="0.9">
+    <rect x="15" y="455" width="80" height="30" fill="black" opacity="0.5" rx="15"/>
+    <text x="55" y="475" font-family="Arial, sans-serif" font-size="14" fill="white" 
+          text-anchor="middle" font-weight="600" opacity="0.9">
+      #0000
+    </text>
+  </g>
+</svg>

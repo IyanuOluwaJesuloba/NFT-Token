@@ -1,0 +1,38 @@
+{
+  "name": "Genesis #7",
+  "description": "A unique generative artwork featuring Cubic geometry with Grid pattern on Deep Space backdrop. Part of the Genesis Collection.",
+  "image": "ipfs://QmYLQCvEMphuavp9cfvjwjbnmHWKPS63rAA4rME6Chv85p",
+  "attributes": [
+    {
+      "trait_type": "Shape",
+      "value": "Cubic"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Deep Space"
+    },
+    {
+      "trait_type": "Pattern",
+      "value": "Grid"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Shimmer"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 7,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 1,
+      "display_type": "number"
+    }
+  ],
+  "external_url": "https://your-website.com"
+}

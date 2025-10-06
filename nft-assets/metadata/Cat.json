@@ -1,0 +1,8 @@
+{
+    "name": "My NFT #0",
+    "description": "Short description",
+    "image": "ipfs://bafybeiftnvdviwxr2mpz55nmlhymlspe4gyigrpe3oofry5k63gs6echyy",
+    "attributes": [
+      { "trait_type": "Background", "value": "Blue" }
+    ]
+  }

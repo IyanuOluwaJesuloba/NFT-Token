@@ -1,0 +1,57 @@
+<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <radialGradient id="centerGlow8">
+      <stop offset="0%" style="stop-color:#f5576c;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background Gradient -->
+  <rect width="500" height="500" fill="url(#bg8)"/>
+  
+  <!-- Pattern Overlay -->
+  <circle cx="250" cy="250" r="60" fill="none" stroke="white" opacity="0.21" stroke-width="2"/><circle cx="250" cy="250" r="120" fill="none" stroke="white" opacity="0.17" stroke-width="2"/><circle cx="250" cy="250" r="180" fill="none" stroke="white" opacity="0.13" stroke-width="2"/><circle cx="250" cy="250" r="240" fill="none" stroke="white" opacity="0.09" stroke-width="2"/>
+  
+  <!-- Center Glow Effect -->
+  <circle cx="250" cy="250" r="150" fill="url(#centerGlow8)"/>
+  
+  <!-- Outer Ring -->
+  <circle cx="250" cy="250" r="120" fill="none" stroke="white" stroke-width="2" opacity="0.15"/>
+  
+  <!-- Main Shape -->
+  <polygon points="250,170 319.28,290 180.72,290" 
+              fill="white" opacity="0.9" filter="url(#glow)"/>
+  
+  <!-- Inner Accent -->
+  <circle cx="250" cy="250" r="50" fill="#f5576c" opacity="0.2" filter="url(#softGlow)"/>
+  
+  <!-- Minimal Badge -->
+  <g opacity="0.9">
+    <rect x="15" y="455" width="80" height="30" fill="black" opacity="0.5" rx="15"/>
+    <text x="55" y="475" font-family="Arial, sans-serif" font-size="14" fill="white" 
+          text-anchor="middle" font-weight="600" opacity="0.9">
+      #0008
+    </text>
+  </g>
+</svg>

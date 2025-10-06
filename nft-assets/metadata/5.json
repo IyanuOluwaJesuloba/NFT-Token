@@ -1,0 +1,38 @@
+{
+  "name": "Genesis #5",
+  "description": "A unique generative artwork featuring Hex Grid geometry with Particles pattern on Emerald Matrix backdrop. Part of the Genesis Collection.",
+  "image": "ipfs://QmcLBhna6DNG9s1ZFJ1xtJFNhSo7e6C2vqTFfQhNrLm2BL",
+  "attributes": [
+    {
+      "trait_type": "Shape",
+      "value": "Hex Grid"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Emerald Matrix"
+    },
+    {
+      "trait_type": "Pattern",
+      "value": "Particles"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Halo"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 5,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 1,
+      "display_type": "number"
+    }
+  ],
+  "external_url": "https://your-website.com"
+}

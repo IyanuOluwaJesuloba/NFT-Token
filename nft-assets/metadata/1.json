@@ -1,0 +1,38 @@
+{
+  "name": "Genesis #1",
+  "description": "A unique generative artwork featuring Orbital geometry with Waves pattern on Cyber Violet backdrop. Part of the Genesis Collection.",
+  "image": "ipfs://QmYs11ZcJGExXgpKT2uACjLbhvM1X9kbkW1huyEJVnHREh",
+  "attributes": [
+    {
+      "trait_type": "Shape",
+      "value": "Orbital"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Cyber Violet"
+    },
+    {
+      "trait_type": "Pattern",
+      "value": "Waves"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Halo"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 1,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 1,
+      "display_type": "number"
+    }
+  ],
+  "external_url": "https://your-website.com"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Genesis #4",
+  "description": "A unique generative artwork featuring Penta geometry with Geometric pattern on Molten Gold backdrop. Part of the Genesis Collection.",
+  "image": "ipfs://QmdNPP2DXey3PqshNGvCDaKXwFXLFFAs8117DudtmyakGu",
+  "attributes": [
+    {
+      "trait_type": "Shape",
+      "value": "Penta"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Molten Gold"
+    },
+    {
+      "trait_type": "Pattern",
+      "value": "Geometric"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Glow"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 4,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 1,
+      "display_type": "number"
+    }
+  ],
+  "external_url": "https://your-website.com"
+}
