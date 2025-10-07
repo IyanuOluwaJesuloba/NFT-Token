@@ -1,14 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import "forge-std/Script.sol";
-import "../src/NFT.sol";
+import {Script} from "forge-std/Script.sol";
+import {console} from "forge-std/console.sol";
+import {MyNFT} from "../src/NFT.sol";
 
 contract UpdateTokenURIScript is Script {
     function run() external {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
         address nftAddress = vm.envAddress("NFT_CONTRACT_ADDRESS");
-        
+
         // Correct metadata URIs from Pinata upload
         string[] memory uris = new string[](10);
         uris[0] = "ipfs://Qmf6P7DBfszYetiz1popxkiYJw46njsRJmJpcTN2ENH8wX";
@@ -21,18 +22,18 @@ contract UpdateTokenURIScript is Script {
         uris[7] = "ipfs://QmZKU3tr9pVyppt4nih495T4bLc5Wpwapg1VHmNAuKodte";
         uris[8] = "ipfs://QmbdSCUhAscHn67pZJ3mWM8ScG2DgGfSAu28bRrx89UNbD";
         uris[9] = "ipfs://QmRouAcTcWd7GFoucQkdRFY6BX5AktVaGiw9Pr6ssGtAs2";
-        
+
         vm.startBroadcast(deployerPrivateKey);
-        
+
         MyNFT nft = MyNFT(nftAddress);
-        
+
         for (uint256 i = 0; i < uris.length; i++) {
-            nft.updateTokenURI(i, uris[i]);
+            nft.updateTokenUri(i, uris[i]);
             console.log("Updated NFT #", i, "with URI:", uris[i]);
         }
-        
+
         console.log("Updated", uris.length, "NFTs with correct metadata");
-        
+
         vm.stopBroadcast();
     }
 }
