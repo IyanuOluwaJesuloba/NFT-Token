@@ -1,18 +1,19 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import "forge-std/Script.sol";
-import "../src/NFT.sol";
+import {Script} from "forge-std/Script.sol";
+import {console} from "forge-std/console.sol";
+import {MyNFT} from "../src/NFT.sol";
 
 contract DeployScript is Script {
     function run() external {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
-        
+
         vm.startBroadcast(deployerPrivateKey);
-        
+
         MyNFT nft = new MyNFT();
         console.log("MyNFT deployed to:", address(nft));
-        
+
         vm.stopBroadcast();
     }
 }
@@ -22,14 +23,14 @@ contract MintScript is Script {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
         address nftAddress = vm.envAddress("NFT_CONTRACT_ADDRESS");
         string memory metadataUri = vm.envString("METADATA_URI");
-        
+
         vm.startBroadcast(deployerPrivateKey);
-        
+
         MyNFT nft = MyNFT(nftAddress);
         nft.mint(metadataUri);
-        
+
         console.log("NFT minted with URI:", metadataUri);
-        
+
         vm.stopBroadcast();
     }
 }
@@ -37,18 +38,18 @@ contract MintScript is Script {
 contract DeployAndMintScript is Script {
     function run() external {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
-        
+
         vm.startBroadcast(deployerPrivateKey);
-        
+
         // Deploy
         MyNFT nft = new MyNFT();
         console.log("MyNFT deployed to:", address(nft));
-        
+
         // Mint first NFT
         string memory metadataUri = "ipfs://Qmf6P7DBfszYetiz1popxkiYJw46njsRJmJpcTN2ENH8wX";
         nft.mint(metadataUri);
         console.log("NFT #0 minted to:", msg.sender);
-        
+
         vm.stopBroadcast();
     }
 }
@@ -57,7 +58,7 @@ contract BatchMintScript is Script {
     function run() external {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
         address nftAddress = vm.envAddress("NFT_CONTRACT_ADDRESS");
-        
+
         // Array of metadata URIs - from Pinata upload
         string[] memory uris = new string[](10);
         uris[0] = "ipfs://Qmf6P7DBfszYetiz1popxkiYJw46njsRJmJpcTN2ENH8wX";
@@ -70,18 +71,18 @@ contract BatchMintScript is Script {
         uris[7] = "ipfs://QmZKU3tr9pVyppt4nih495T4bLc5Wpwapg1VHmNAuKodte";
         uris[8] = "ipfs://QmbdSCUhAscHn67pZJ3mWM8ScG2DgGfSAu28bRrx89UNbD";
         uris[9] = "ipfs://QmRouAcTcWd7GFoucQkdRFY6BX5AktVaGiw9Pr6ssGtAs2";
-        
+
         vm.startBroadcast(deployerPrivateKey);
-        
+
         MyNFT nft = MyNFT(nftAddress);
-        
+
         for (uint256 i = 0; i < uris.length; i++) {
             nft.mint(uris[i]);
             console.log("Minted NFT with URI:", uris[i]);
         }
-        
+
         console.log("Batch minted", uris.length, "NFTs");
-        
+
         vm.stopBroadcast();
     }
 }

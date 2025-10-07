@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import "forge-std/Test.sol";
-import "../src/MyNFT.sol";
+import {Test} from "forge-std/Test.sol";
+import {MyNFT} from "../src/NFT.sol";
+import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 contract MyNFTTest is Test {
     MyNFT public nft;
@@ -17,22 +18,26 @@ contract MyNFTTest is Test {
 
     function testMint() public {
         string memory uri = "ipfs://QmTest123";
+        // Mint as an EOA to avoid ERC721InvalidReceiver when msg.sender is this contract
+        vm.prank(user1);
         nft.mint(uri);
-        
-        assertEq(nft.ownerOf(0), address(this));
+
+        assertEq(nft.ownerOf(0), user1);
         assertEq(nft.tokenURI(0), uri);
     }
 
     function testSafeMint() public {
         string memory uri = "ipfs://QmTest456";
         nft.safeMint(user1, uri);
-        
+
         assertEq(nft.ownerOf(0), user1);
         assertEq(nft.tokenURI(0), uri);
     }
 
-    function testFailMintUnauthorized() public {
+    function test_RevertWhen_NonOwnerCallsSafeMint() public {
+        // OpenZeppelin Ownable (v5+) reverts with custom error OwnableUnauthorizedAccount(address)
         vm.prank(user1);
+        vm.expectRevert(abi.encodeWithSelector(Ownable.OwnableUnauthorizedAccount.selector, user1));
         nft.safeMint(user1, "ipfs://test");
     }
 }
